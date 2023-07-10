@@ -4,19 +4,17 @@
 """ asynchronous python """
 
 
-import asyncio
-from typing import Any
+from asyncio import Task, create_task
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_random(max_delay: int) -> Any:
+def task_wait_random(max_delay: int) -> Task:
     """ function task_wait_random.
     Args:
         max_delay: input from wait_random delay
     Return:
         task: Any
     """
-    loop = asyncio.get_event_loop()
-    task = loop.create_task(wait_random(max_delay))
+    task = create_task(wait_random(max_delay))
     return task
