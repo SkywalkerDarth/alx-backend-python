@@ -13,7 +13,7 @@ async def async_generator() -> Generator[float, None, None]:
     """ function generate rsndom numbers asynchron
     Args: none
     Return:
-        asyn_delay: float
+        None: float
     """
     for _ in range(10):
         await asyncio.sleep(1)
